@@ -16,7 +16,7 @@ public class Conexion
 	private Conexion()
 	{
 		try
-		{
+		{ 
 			Class.forName("com.mysql.cj.jdbc.Driver"); // quitar si no es necesario
 			this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/agenda","root","root");
 			this.connection.setAutoCommit(false);
@@ -36,7 +36,7 @@ public class Conexion
 			instancia = new Conexion();
 		}
 		return instancia;
-	}
+	} 
 
 	public Connection getSQLConexion() 
 	{

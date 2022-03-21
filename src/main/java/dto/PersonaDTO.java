@@ -5,14 +5,16 @@ public class PersonaDTO
 	private int idPersona;
 	private String nombre;
 	private String telefono;
+	private LocalidadDTO localidad;
 
-	public PersonaDTO(int idPersona, String nombre, String telefono)
+	public PersonaDTO(int idPersona, String nombre, String telefono, LocalidadDTO localidad)
 	{
-		this.idPersona = idPersona;
-		this.nombre = nombre;
-		this.telefono = telefono;
-	}
-	
+		this.setIdPersona(idPersona);
+		this.setNombre(nombre);
+		this.setTelefono(telefono);
+		this.setLocalidad(localidad);
+	} 
+	 
 	public int getIdPersona()  
 	{
 		return this.idPersona;
@@ -42,4 +44,14 @@ public class PersonaDTO
 	{
 		this.telefono = telefono;
 	}
+
+	public LocalidadDTO getLocalidad() {
+		return localidad;
+	}
+
+	public void setLocalidad(LocalidadDTO localidad) {
+		this.localidad = localidad;
+	}
+	
+	
 }

@@ -23,8 +23,8 @@ public class PersonaDAOSQL implements PersonaDAO
 		Connection conexion = Conexion.getConexion().getSQLConexion();
 		boolean isInsertExitoso = false;
 		try
-		{
-			statement = conexion.prepareStatement(insert);
+		{ 
+			statement = conexion.prepareStatement(insert); 
 			statement.setInt(1, persona.getIdPersona());
 			statement.setString(2, persona.getNombre());
 			statement.setString(3, persona.getTelefono());

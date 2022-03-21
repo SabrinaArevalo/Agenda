@@ -14,7 +14,7 @@ public class Agenda
 	{
 		this.persona = metodo_persistencia.createPersonaDAO();
 	}
-	
+	  
 	public void agregarPersona(PersonaDTO nuevaPersona)
 	{
 		this.persona.insert(nuevaPersona);

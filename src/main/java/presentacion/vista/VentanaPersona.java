@@ -22,7 +22,7 @@ public class VentanaPersona extends JFrame
 		{
 			INSTANCE = new VentanaPersona(); 	
 			return new VentanaPersona();
-		}
+		} 
 		else
 			return INSTANCE;
 	}
