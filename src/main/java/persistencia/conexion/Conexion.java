@@ -3,27 +3,28 @@ package persistencia.conexion;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Conexion 
 {
 	public static Conexion instancia;
 	private Connection connection;
-	private Logger log = Logger.getLogger(Conexion.class);	
+	private Logger log = LogManager.getLogger(Conexion.class);	
 	
 	private Conexion()
 	{
 		try
 		{
-			Class.forName("com.mysql.jdbc.Driver"); // quitar si no es necesario
+			Class.forName("com.mysql.cj.jdbc.Driver"); // quitar si no es necesario
 			this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/agenda","root","root");
 			this.connection.setAutoCommit(false);
-			log.info("ConexiÃ³n exitosa");
+			log.info("Conexión exitosa");
 		}
 		catch(Exception e)
-		{
-			log.error("ConexiÃ³n fallida", e);
+		{ 
+			log.error("Conexión fallida", e);
 		}
 	}
 	

@@ -13,7 +13,7 @@ public class PersonaDTO
 		this.telefono = telefono;
 	}
 	
-	public int getIdPersona() 
+	public int getIdPersona()  
 	{
 		return this.idPersona;
 	}
