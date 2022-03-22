@@ -6,15 +6,27 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JComboBox;
+import com.toedter.calendar.JDateChooser;
 
 public class VentanaPersona extends JFrame 
 {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField txtNombre;
-	private JTextField txtTelefono;
+	private JTextField textNombre;
+	private JTextField textTelefono;
 	private JButton btnAgregarPersona;
+	private JLabel textLocalidad;
+	private JComboBox<String> selectLocalidad;
 	private static VentanaPersona INSTANCE;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JLabel lblEmail;
+	private JTextField textField_4;
+	private JLabel lblPais;
+	private JLabel lblProvincia;
 	
 	public static VentanaPersona getInstance()
 	{
@@ -32,38 +44,115 @@ public class VentanaPersona extends JFrame
 		super();
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 343, 183);
+		setBounds(100, 100, 613, 375);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(10, 11, 307, 123);
+		panel.setBounds(10, 11, 560, 314);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
 		JLabel lblNombreYApellido = new JLabel("Nombre y apellido");
-		lblNombreYApellido.setBounds(10, 11, 113, 14);
+		lblNombreYApellido.setBounds(10, 11, 96, 14);
 		panel.add(lblNombreYApellido);
 		
 		JLabel lblTelfono = new JLabel("Telefono");
-		lblTelfono.setBounds(10, 52, 113, 14);
+		lblTelfono.setBounds(10, 52, 50, 14);
 		panel.add(lblTelfono);
 		
-		txtNombre = new JTextField();
-		txtNombre.setBounds(133, 8, 164, 20);
-		panel.add(txtNombre);
-		txtNombre.setColumns(10);
+		textNombre = new JTextField();
+		textNombre.setBounds(112, 8, 173, 20);
+		panel.add(textNombre);
+		textNombre.setColumns(10);
 		
-		txtTelefono = new JTextField();
-		txtTelefono.setBounds(133, 49, 164, 20);
-		panel.add(txtTelefono);
-		txtTelefono.setColumns(10);
+		textTelefono = new JTextField();
+		textTelefono.setBounds(70, 49, 173, 20);
+		panel.add(textTelefono);
+		textTelefono.setColumns(10);
 		
 		btnAgregarPersona = new JButton("Agregar");
-		btnAgregarPersona.setBounds(208, 92, 89, 23);
+		btnAgregarPersona.setBounds(352, 229, 89, 23);
 		panel.add(btnAgregarPersona);
+		
+		selectLocalidad = new JComboBox<String>();
+		selectLocalidad.setBounds(61, 123, 144, 23);
+		panel.add(selectLocalidad);
+		
+		textLocalidad = new JLabel("Localidad");
+		textLocalidad.setBounds(10, 172, 50, 19);
+		panel.add(textLocalidad);
+		
+		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setBounds(401, 8, 131, 20);
+		panel.add(dateChooser);
+		
+		JLabel lblFechaDeNacimiento = new JLabel("Fecha de nacimiento");
+		lblFechaDeNacimiento.setBounds(295, 11, 103, 14);
+		panel.add(lblFechaDeNacimiento);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(70, 80, 173, 20);
+		panel.add(textField);
+		
+		JLabel lblCalle = new JLabel("Calle");
+		lblCalle.setBounds(10, 83, 41, 14);
+		panel.add(lblCalle);
+		
+		JLabel lblAltura = new JLabel("Altura");
+		lblAltura.setBounds(253, 82, 41, 17);
+		panel.add(lblAltura);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(289, 80, 52, 20);
+		panel.add(textField_1);
+		
+		JLabel lblPiso = new JLabel("Piso");
+		lblPiso.setBounds(351, 83, 41, 17);
+		panel.add(lblPiso);
+		
+		JLabel lblDepto = new JLabel("Depto");
+		lblDepto.setBounds(451, 83, 41, 17);
+		panel.add(lblDepto);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(389, 80, 52, 20);
+		panel.add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(491, 80, 52, 20);
+		panel.add(textField_3);
+		
+		lblEmail = new JLabel("Email");
+		lblEmail.setBounds(253, 52, 50, 14);
+		panel.add(lblEmail);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(292, 49, 215, 20);
+		panel.add(textField_4);
+		
+		lblPais = new JLabel("Pa\u00EDs");
+		lblPais.setBounds(10, 127, 31, 14);
+		panel.add(lblPais);
+		
+		lblProvincia = new JLabel("Provincia");
+		lblProvincia.setBounds(267, 127, 52, 14);
+		panel.add(lblProvincia);
+		
+		JComboBox<String> selectLocalidad_1 = new JComboBox<String>();
+		selectLocalidad_1.setBounds(348, 123, 144, 23);
+		panel.add(selectLocalidad_1);
+		
+		JComboBox<String> selectLocalidad_2 = new JComboBox<String>();
+		selectLocalidad_2.setBounds(61, 169, 144, 23);
+		panel.add(selectLocalidad_2);
 		
 		this.setVisible(false);
 	}
@@ -73,27 +162,37 @@ public class VentanaPersona extends JFrame
 		this.setVisible(true);
 	}
 	
-	public JTextField getTxtNombre() 
+	public JTextField getTextNombre() 
 	{
-		return txtNombre;
+		return textNombre;
 	}
 
-	public JTextField getTxtTelefono() 
+	public JTextField getTextTelefono() 
 	{
-		return txtTelefono;
+		return textTelefono;
 	}
 
 	public JButton getBtnAgregarPersona() 
 	{
 		return btnAgregarPersona;
 	}
+	
+	
+	public JLabel getTextLocalidad()
+	{
+		return textLocalidad;
+	}
+
+	public JComboBox<String> getSelectLocalidad()
+	{
+		return selectLocalidad;
+	}
 
 	public void cerrar()
 	{
-		this.txtNombre.setText(null);
-		this.txtTelefono.setText(null);
+		this.textNombre.setText(null);
+		this.textTelefono.setText(null);
 		this.dispose();
 	}
-	
 }
 

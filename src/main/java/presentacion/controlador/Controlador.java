@@ -8,6 +8,7 @@ import modelo.Agenda;
 import presentacion.reportes.ReporteAgenda;
 import presentacion.vista.VentanaPersona;
 import presentacion.vista.Vista;
+import dto.LocalidadDTO;
 import dto.PersonaDTO;
 
 public class Controlador implements ActionListener
@@ -33,9 +34,10 @@ public class Controlador implements ActionListener
 		}
 
 		private void guardarPersona(ActionEvent p) {
-			String nombre = this.ventanaPersona.getTxtNombre().getText();
-			String tel = ventanaPersona.getTxtTelefono().getText();
-			PersonaDTO nuevaPersona = new PersonaDTO(0, nombre, tel);
+			String nombre = this.ventanaPersona.getTextNombre().getText();
+			String tel = ventanaPersona.getTextTelefono().getText();
+			String localidad = ventanaPersona.getTextLocalidad().getText();
+			PersonaDTO nuevaPersona = new PersonaDTO(0, nombre, tel, new LocalidadDTO(1, localidad));
 			this.agenda.agregarPersona(nuevaPersona);
 			this.refrescarTabla();
 			this.ventanaPersona.cerrar();

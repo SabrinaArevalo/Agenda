@@ -9,6 +9,7 @@ import java.util.List;
 
 import persistencia.conexion.Conexion;
 import persistencia.dao.interfaz.PersonaDAO;
+import dto.LocalidadDTO;
 import dto.PersonaDTO;
 
 public class PersonaDAOSQL implements PersonaDAO
@@ -96,6 +97,8 @@ public class PersonaDAOSQL implements PersonaDAO
 		int id = resultSet.getInt("idPersona");
 		String nombre = resultSet.getString("Nombre");
 		String tel = resultSet.getString("Telefono");
-		return new PersonaDTO(id, nombre, tel);
+		LocalidadDTO localidad = new LocalidadDTO(resultSet.getInt("idLocalidad"),resultSet.getString("localidadNombre"));
+		
+		return new PersonaDTO(id, nombre, tel, localidad);
 	}
 }

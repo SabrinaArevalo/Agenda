@@ -40,7 +40,7 @@ public class ReporteAgenda
 		}
 		catch( JRException ex ) 
 		{
-			log.error("OcurriÃ³ un error mientras se cargaba el archivo ReporteAgenda.Jasper", ex);
+			log.error("Ocurrió un error mientras se cargaba el archivo ReporteAgenda.Jasper", ex);
 		}
     }       
     
