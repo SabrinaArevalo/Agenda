@@ -17,7 +17,7 @@ public class VentanaPersona extends JFrame
 	private JTextField textTelefono;
 	private JButton btnAgregarPersona;
 	private JLabel textLocalidad;
-	private JComboBox<String> selectLocalidad;
+	private JComboBox<String> selectPais;
 	private static VentanaPersona INSTANCE;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -51,7 +51,7 @@ public class VentanaPersona extends JFrame
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(10, 11, 560, 314);
+		panel.setBounds(10, 10, 560, 314);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -77,9 +77,9 @@ public class VentanaPersona extends JFrame
 		btnAgregarPersona.setBounds(352, 229, 89, 23);
 		panel.add(btnAgregarPersona);
 		
-		selectLocalidad = new JComboBox<String>();
-		selectLocalidad.setBounds(61, 123, 144, 23);
-		panel.add(selectLocalidad);
+		selectPais = new JComboBox<String>();
+		selectPais.setBounds(61, 123, 144, 23);
+		panel.add(selectPais);
 		
 		textLocalidad = new JLabel("Localidad");
 		textLocalidad.setBounds(10, 172, 50, 19);
@@ -146,13 +146,21 @@ public class VentanaPersona extends JFrame
 		lblProvincia.setBounds(267, 127, 52, 14);
 		panel.add(lblProvincia);
 		
-		JComboBox<String> selectLocalidad_1 = new JComboBox<String>();
-		selectLocalidad_1.setBounds(348, 123, 144, 23);
-		panel.add(selectLocalidad_1);
+		JComboBox<String> selectProvincia = new JComboBox<String>();
+		selectProvincia.setBounds(348, 123, 144, 23);
+		panel.add(selectProvincia);
 		
 		JComboBox<String> selectLocalidad_2 = new JComboBox<String>();
 		selectLocalidad_2.setBounds(61, 169, 144, 23);
 		panel.add(selectLocalidad_2);
+		
+		JLabel lblTipoContacto = new JLabel("Tipo de contacto:");
+		lblTipoContacto.setBounds(270, 173, 96, 16);
+		panel.add(lblTipoContacto);
+		
+		JComboBox<String> selectTipoContacto = new JComboBox();
+		selectTipoContacto.setBounds(365, 171, 131, 21);
+		panel.add(selectTipoContacto);
 		
 		this.setVisible(false);
 	}
@@ -185,7 +193,7 @@ public class VentanaPersona extends JFrame
 
 	public JComboBox<String> getSelectLocalidad()
 	{
-		return selectLocalidad;
+		return selectPais;
 	}
 
 	public void cerrar()
